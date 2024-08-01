@@ -124,3 +124,87 @@
 // arr.unshift() :- Since in this method it shifts and thereby we have to change index of every element therefore the complexity is O(n)
 // arr.shift() :- Same the indexing changes therefore the complexity is O(n)
 // Searching :- There are 2 cases if we have to find value then complexity is O(n) and if we have to find index its a simple operation thereby O(1)
+
+// Array travesring
+
+// let arr = [1, 2, 3, 4, 5];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// Case 1 :- If we have to find one specific number :-
+
+// let arr = [1, 2, 3, 4, 5];
+// targetNumber = 6;
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] === targetNumber) {
+//     console.log("Target number found at : ", i);
+//     break;
+//   }
+
+//   if (arr[i] != targetNumber) {
+//     console.log("Target number not found in the array");
+//   }
+// }
+
+// Array Inserting :-
+
+// 1st Method
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function insertElement(arr, index, element) {
+//   arr.splice(index, 0, element);
+//   return arr;
+// }
+
+// console.log(insertElement(arr, 5, 6));
+
+// 2nd method
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function insertElement(arr, index, element) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === index) {
+//       newArr.push(element);
+//     }
+//     newArr.push(arr[i]);
+//   }
+//   return newArr;
+// }
+
+// console.log(insertElement(arr, 2, 10));
+
+// Array deletion
+
+// 1st method
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function deleteElement(arr, index) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === arr[index]) {
+//       newArr.pop(index);
+//     }
+//     newArr.push(arr[i]);
+//   }
+//   return newArr;
+// }
+
+// console.log(deleteElement(arr, 2));
+
+// 2nd method
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function deleteElement(arr, index) {
+//   arr.splice(index, 1);
+//   return arr;
+// }
+
+// console.log(deleteElement(arr, 2));

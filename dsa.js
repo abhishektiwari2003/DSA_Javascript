@@ -208,3 +208,49 @@
 // }
 
 // console.log(deleteElement(arr, 2));
+
+// Two pointer approach : -
+// ---> Array should be sorted
+// ---> And we assign one pointer as low and another pointer as high for eg here is the code for Two Sum leetcode ( #1 ) question using this approach :-
+
+// var twoSum = function (nums, target) {
+//   let i = 0;
+//   let j = nums.length - 1;
+//   let newArr = [];
+//   while (i < j) {
+//     sum = nums[i] + nums[j];
+//     if (sum === target) {
+//       newArr.push(i, j);
+//       break;
+//     } else if (sum < target) {
+//       i++;
+//     } else {
+//       j--;
+//     }
+//   }
+//   return newArr;
+// };
+
+// console.log(twoSum([2, 4, 6, 8, 10], 18));
+
+// Solution of Intersection of two arrays (leetcode #349)
+
+// var newFunction = function (nums1, nums2) {
+//   newObj = {};
+
+//   for (let num of nums1) {
+//     newObj[num] = nums2.includes(num) ? 1 : 0;
+//   }
+
+//   let newArr = [];
+
+//   for (let key in newObj) {
+//     if (newObj[key] === 1) {
+//       newArr.push(Number(key));
+//     }
+//   }
+
+//   return newArr;
+// };
+
+// console.log(newFunction([9, 4, 9, 8, 4], [4, 9, 5]));

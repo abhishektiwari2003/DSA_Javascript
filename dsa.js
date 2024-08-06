@@ -254,3 +254,26 @@
 // };
 
 // console.log(newFunction([9, 4, 9, 8, 4], [4, 9, 5]));
+
+// Solution of Leetcode question of triplets
+
+// var arithmeticTriplets = function (nums, diff) {
+//   let result = [];
+//   let found = false;
+//   for (let i = 0; i < nums.length - 2; i++) {
+//     for (let j = i + 1; j < nums.length - 1; j++) {
+//       for (let k = j + 1; k < nums.length; k++) {
+//         if (nums[j] - nums[i] == diff && nums[k] - nums[j] == diff) {
+//           result.push(nums[i], nums[j], nums[k]);
+//           !found;
+//         }
+//       }
+//     }
+//   }
+//   if ((found = false)) {
+//     return result;
+//   }
+//   return result.length / 3;
+// };
+
+// console.log(arithmeticTriplets([0, 1, 4, 6, 7, 10], 3));

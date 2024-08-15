@@ -277,3 +277,155 @@
 // };
 
 // console.log(arithmeticTriplets([0, 1, 4, 6, 7, 10], 3));
+
+// var threeSum = function (nums) {
+//   let found = false;
+//   let newArr = [];
+//   for (let i = 0; i < nums.length - 2; i++) {
+//     for (let j = i + 1; j < nums.length - 1; j++) {
+//       for (let k = j + 1; k < nums.length; k++) {
+//         if (nums[i] + nums[j] + nums[k] === 0) {
+//           newArr.push([nums[i], nums[j], nums[k]]);
+//           found = true;
+//         }
+//       }
+//     }
+//   }
+//   if (!found) {
+//     return newArr;
+//   }
+//   return newArr;
+// };
+
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+// Linked List
+
+// Big O of Singly Linked List
+
+// Case 1 inserting or delete in last node
+
+// Insert a node in linked list its a constant operation because we always add
+// node at tail thereby its complexity its O(1)
+
+// Delete a node in linked list
+// Since we are iterating over each element as soon as we reach second last
+//node we assign it to null thereby last element of will get popped up
+// therefore complexity is O(n)
+
+// Case 2 Inserting or Deleting in Beginning node
+
+// We just need to insert node in start thereby O(1) complexity
+// We just assign head to next node after the first element and second
+// element will be head now so the first element will get popped out
+
+// Case 3 Inserting or Deleting in any middle node
+// Inserting an element in middle is O(n) complexity
+// Deleting an element in middle is O(n) complexity
+// We just need to change the address
+
+// Searching a node operation is always O(n) complexity
+
+//Singly Linked list and method implementation :-
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  constructor(val) {
+    const newNode = new Node(val);
+    this.head = newNode;
+    this.tail = this.head;
+    this.length = 1;
+  }
+
+  push(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+    let temp = this.head;
+    let pre = this.head;
+    while (temp.next) {
+      pre = temp;
+      temp = temp.next;
+    }
+
+    this.tail = pre;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length == 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return temp;
+  }
+
+  unshift(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    let temp = this.head;
+    this.head = this.head.next;
+    this.length--;
+    if (this.length == 0) {
+      this.tail = null;
+    }
+    temp.next = null;
+    return temp;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+    let temp = this.head;
+    for (let i = 0; i < index; i++) {
+      temp = temp.next;
+    }
+    return temp;
+  }
+
+  set(index, val) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.val = val;
+      return true;
+    }
+    return false;
+  }
+}
+
+let first = new SinglyLinkedList(10);
+first.push(25);
+first.push(10);
+first.set(1, 35);
+
+console.log(first);
+// first.pop();
+// first.pop();
+// first.pop();
+// first.unshift(8);
+// first.unshift(15);
+// console.log(first.shift());
+// console.log(first);
